@@ -1,16 +1,19 @@
 <template>
   <div id="app">
+    <Header />
     <router-view />
   </div>
 </template>
 
 <script>
-import GameList from './components/GameList.vue'
+import GameList from './components/GameList.vue';
+import Header from './components/layout/Header';
 
 export default {
   name: 'app',
   components: {
-    GameList
+    GameList,
+    Header
   }
 }
 </script>

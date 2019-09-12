@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <table>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <table align="center">
       <tr>
         <th>Name</th>
         <th>Short Description</th>
@@ -16,7 +17,7 @@
           <td v-if="game.createdby !== 'none'">{{ game.createdby }}</td>
           <td v-else></td>
           <td style="white-space: nowrap;">{{ game.hostdays }}</td>
-          <td v-if="game.haspassword">{{ game.haspassword }}</td>
+          <td v-if="game.haspassword"><i class="fa fa-lock" style="font-size:36px"></i></td>
           <td v-else></td>
         </tr>
 
@@ -52,6 +53,7 @@ export default {
 
 <style>
 table {
+  display: block;
   width: 60%;
   border-collapse: collapse;
   text-align: left;
