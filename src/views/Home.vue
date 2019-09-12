@@ -1,8 +1,24 @@
 <template>
   <div id="app">
-    <div v-for="game in games" :key="game.id">
-      {{game.name}}
-    </div>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Short Description</th>
+        <th>Date Created</th>
+        <th>Created By</th>
+        <th>Host Days</th>
+        <th>Password</th>
+      </tr>
+        <tr v-for="game in games" :key="game.id">
+          <td>{{ game.name }} k</td>
+          <td>{{ game.shortdescription }}</td>
+          <td>{{ game.datecreated }} </td>
+          <td>{{ game.createdby }}</td>
+          <td>{{ game.hostdays }}</td>
+          <td>{{ game.haspassword }}</td>
+        </tr>
+
+    </table>
   </div>
 </template>
 
@@ -26,4 +42,11 @@ export default {
 </script>
 
 <style>
+table {
+  width: 100%
+}
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
 </style>
