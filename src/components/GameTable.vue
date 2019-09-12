@@ -26,13 +26,16 @@
 <script>
 import axios from 'axios';
 const dateFormat = require('dateformat');
+const ordinal = require('ordinal');
 
 export default {
   name: 'GameTable',
   props: ['options'],
   methods: {
     formatDate(date) {
-      return dateFormat(date, "mmmm dd yyyy");
+      const split_date = dateFormat(date, "mmmm dd yyyy").split(" ");
+      const formatted_date = split_date[0] + " " + ordinal(parseInt(split_date[1])) + " " + split_date[2];
+      return formatted_date;
     },
     goToGame(id) {
       window.location.href= 'https://planets.nu/#/sector/' + id;
