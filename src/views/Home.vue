@@ -10,12 +10,14 @@
         <th>Password</th>
       </tr>
         <tr v-for="game in games" :key="game.id">
-          <td>{{ game.name }} k</td>
+          <td>{{ game.name }}</td>
           <td>{{ game.shortdescription }}</td>
           <td>{{ formatDate(game.datecreated) }} </td>
-          <td>{{ game.createdby }}</td>
+          <td v-if="game.createdby !== 'none'">{{ game.createdby }}</td>
+          <td v-else></td>
           <td style="white-space: nowrap;">{{ game.hostdays }}</td>
-          <td>{{ game.haspassword }}</td>
+          <td v-if="game.haspassword">{{ game.haspassword }}</td>
+          <td v-else></td>
         </tr>
 
     </table>
