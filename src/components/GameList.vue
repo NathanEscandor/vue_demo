@@ -1,5 +1,6 @@
 <template>
   <div>
+    HELLO IS THIS WORKING?
     {{ games }}
   </div>
 </template>
