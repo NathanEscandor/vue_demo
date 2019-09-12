@@ -14,11 +14,9 @@
           <td>{{ game.name }}</td>
           <td>{{ game.shortdescription }}</td>
           <td>{{ formatDate(game.datecreated) }} </td>
-          <td v-if="game.createdby !== 'none'">{{ game.createdby }}</td>
-          <td v-else></td>
+          <td v-if="game.createdby !== 'none'">{{ game.createdby }}</td><td v-else></td>
           <td style="white-space: nowrap;">{{ game.hostdays }}</td>
-          <td v-if="game.haspassword"><i class="fa fa-lock" style="font-size:36px"></i></td>
-          <td v-else></td>
+          <td v-if="game.haspassword"><i class="fa fa-lock" style="font-size:36px"></i></td><td v-else></td>
         </tr>
 
     </table>
@@ -35,7 +33,7 @@ export default {
   },
   methods: {
     formatDate(date) {
-      return dateFormat(date, "mmmm:dd:yyyy");
+      return dateFormat(date, "mmmm dd yyyy");
     },
     goToGame(id) {
       window.location.href= 'https://planets.nu/#/sector/' + id;
@@ -60,13 +58,14 @@ table {
   width: 60%;
   border-collapse: collapse;
   text-align: left;
+  font-family:'Times New Roman', Times, serif
 }
 td {
-  border: 1px solid #dddddd;
+  border: 2px solid black;
   padding: 8px;
 }
 th {
-  border: 1px solid #dddddd;
+  border: 2px solid black;
   padding: 8px;
   font-weight: bold[]
 }
