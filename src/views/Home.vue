@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    {{games}}
+    <div v-for="game in games" :key="game.id">
+      {{game.name}}
+    </div>
   </div>
 </template>
 
@@ -17,7 +19,7 @@ export default {
   },
   mounted() {
     axios.get('http://api.planets.nu/games/list?status=1')
-      .then(res => (this.games = res))
+      .then(res => (this.games = res.data))
       .catch(err => console.log(err));    
   }
 }
