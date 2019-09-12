@@ -10,7 +10,7 @@
         <th>Host Days</th>
         <th>Password</th>
       </tr>
-        <tr v-for="game in games" :key="game.id">
+        <tr v-for="game in games" :key="game.id" v-on:click="goToGame(game.id)" style="cursor: pointer;">
           <td>{{ game.name }}</td>
           <td>{{ game.shortdescription }}</td>
           <td>{{ formatDate(game.datecreated) }} </td>
@@ -36,6 +36,9 @@ export default {
   methods: {
     formatDate(date) {
       return dateFormat(date, "mmmm:dd:yyyy");
+    },
+    goToGame(id) {
+      window.location.href= 'https://planets.nu/#/sector/' + id;
     }
   },
   data() {
@@ -46,7 +49,7 @@ export default {
   mounted() {
     axios.get('http://api.planets.nu/games/list?status=1')
       .then(res => (this.games = res.data))
-      .catch(err => console.log(err));    
+      .catch(err => console.log(err));
   }
 }
 </script>
