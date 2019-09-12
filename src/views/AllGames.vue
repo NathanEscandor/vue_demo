@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import GameTable from '../components/GameTable';
 
 export default {
