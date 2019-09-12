@@ -43,10 +43,19 @@ export default {
 
 <style>
 table {
-  width: 100%
+  border-collapse: collapse;
+  text-align: left;
 }
-td, th {
+td {
   border: 1px solid #dddddd;
   padding: 8px;
+}
+th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  font-weight: bold[]
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2
 }
 </style>
