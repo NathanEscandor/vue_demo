@@ -12,7 +12,7 @@
         <tr v-for="game in games" :key="game.id">
           <td>{{ game.name }} k</td>
           <td>{{ game.shortdescription }}</td>
-          <td>{{ game.datecreated }} </td>
+          <td>{{ formatDate(game.datecreated) }} </td>
           <td>{{ game.createdby }}</td>
           <td>{{ game.hostdays }}</td>
           <td>{{ game.haspassword }}</td>
@@ -24,9 +24,16 @@
 
 <script>
 import axios from 'axios';
+const dateFormat = require('dateformat');
+
 export default {
   name: 'Home',
   components: {
+  },
+  methods: {
+    formatDate(date) {
+      return dateFormat(date, "mmmm:dd:yyyy");
+    }
   },
   data() {
     return {
