@@ -14,7 +14,7 @@
           <td>{{ game.shortdescription }}</td>
           <td>{{ formatDate(game.datecreated) }} </td>
           <td>{{ game.createdby }}</td>
-          <td>{{ game.hostdays }}</td>
+          <td style="white-space: nowrap;">{{ game.hostdays }}</td>
           <td>{{ game.haspassword }}</td>
         </tr>
 
@@ -50,6 +50,7 @@ export default {
 
 <style>
 table {
+  width: 60%;
   border-collapse: collapse;
   text-align: left;
 }
