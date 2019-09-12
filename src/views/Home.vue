@@ -1,19 +1,15 @@
 <template>
-  <div>
-    {{ games }}
+  <div id="app">
+    {{games}}
   </div>
 </template>
 
 <script>
-import Game from './Game.vue';
 import axios from 'axios';
-
 export default {
-  name: "GameList",
+  name: 'Home',
   components: {
-    Game
   },
-  props: ["games"],
   data() {
     return {
       games: null
@@ -27,7 +23,5 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
 </style>
-
